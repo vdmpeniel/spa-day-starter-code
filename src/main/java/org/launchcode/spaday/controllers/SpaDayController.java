@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 
 @Controller
@@ -63,6 +64,12 @@ public class SpaDayController {
             }
         }
 
+        model.addAllAttributes(new HashMap<>(){{
+            put("name", name);
+            put("skintype", skintype);
+            put("manipedi", manipedi);
+            put("facials", facials);
+        }});
         return "menu";
     }
 }
