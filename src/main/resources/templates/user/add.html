@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+</head>
+<body>
+    <h1>Add</h1>
+    <form action="/user" method="post">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" th:value="${name}"/>
+        <br>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" th:value="${email}"/>
+        <br>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" th:value="${password}"/>
+        <br>
+
+        <label for="verify">Confirm:</label>
+        <input type="password" name="verify" id="verify"/>
+        <br>
+        <p th if="validationFailed != null && validationFailed">Password validation failed. Make sure your passwords are equal.</p>
+
+        <input type="submit" value="Submit">
+
+    </form>
+</body>
+</html>
