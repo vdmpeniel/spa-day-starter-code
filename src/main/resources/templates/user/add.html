@@ -23,7 +23,7 @@
         <label for="verify">Confirm:</label>
         <input type="password" name="verify" id="verify"/>
         <br>
-        <p th if="validationFailed != null && validationFailed">Password validation failed. Make sure your passwords are equal.</p>
+        <p th:unless="${validPasswordConfirmation}">Password validation failed. Make sure your passwords are equal.</p>
 
         <input type="submit" value="Submit">
 
